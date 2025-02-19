@@ -2,7 +2,7 @@
 
 void	ft_update_var(char *key, char *value, t_env *env, char **update_pwd)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (env->var_list[++i])
@@ -11,7 +11,7 @@ void	ft_update_var(char *key, char *value, t_env *env, char **update_pwd)
 		{
 			free(env->var_list[i]);
 			env->var_list[i] = ft_strjoin(key, value);
-			break;
+			break ;
 		}
 	}
 	if (ft_srch_arr(env->var_list, key) != -1)
@@ -27,10 +27,10 @@ void	ft_update_env(char *path, t_env *env)
 	char	**update_pwd;
 
 	if (!env || !env->var_list)
-		return;
+		return ;
 	update_pwd = malloc(sizeof(char *) * 3);
 	if (!update_pwd)
-		return;
+		return ;
 	update_pwd[0] = ft_strdup("export ");
 	update_pwd[2] = NULL;
 	ft_update_var("OLDPWD=", env->pwd, env, update_pwd);
@@ -43,11 +43,10 @@ void	ft_update_env(char *path, t_env *env)
 	ft_free_arr(update_pwd);
 }
 
-
 void	ft_follow_path(char *path, t_env *env)
 {
-	char *home_path;
-	char *oldpwd_path;
+	char	*home_path;
+	char	*oldpwd_path;
 
 	if (!path || !ft_strncmp(path, "~", 2))
 	{
@@ -95,7 +94,7 @@ void	ft_cd(char **args, t_env *env)
 		if (!path)
 		{
 			printf("cd: failed to retrieve the current directory: "
-				"getcwd: cannot access parent directories\n");
+					"getcwd: cannot access parent directories\n");
 			return ;
 		}
 		ft_update_env(path, env);

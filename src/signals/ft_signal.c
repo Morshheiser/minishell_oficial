@@ -2,16 +2,15 @@
 
 void	ft_setup_signal_handlers(void)
 {
-
-	signal (SIGQUIT, SIG_IGN);
-	signal (SIGINT, ft_error_handler_sigint);
+	signal(SIGQUIT, SIG_IGN);
+	signal(SIGINT, ft_error_handler_sigint);
 }
 
-static void ft_error_handler_sigint(int sig)
+static void	ft_error_handler_sigint(int sig)
 {
-    if (sig == SIGINT)
-    {
-        if(RL_ISSTATE(RL_STATE_READCMD))
+	if (sig == SIGINT)
+	{
+		if (RL_ISSTATE(RL_STATE_READCMD))
 		{
 			write(STDOUT_FILENO, "\n", 1);
 			rl_on_new_line();
@@ -27,5 +26,5 @@ static void ft_error_handler_sigint(int sig)
 			rl_replace_line("", 0);
 			status_g = 130;
 		}
-    }
+	}
 }

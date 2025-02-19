@@ -10,7 +10,7 @@ int	ft_perror(int ret, char *text, char *msg, ...)
 	{
 		va_start(apt, msg);
 		i = -1;
-        while (msg[++i])
+		while (msg[++i])
 		{
 			if (msg[i] == '%' && msg[i + 1] != '\0')
 			{
@@ -31,20 +31,18 @@ int	ft_perror(int ret, char *text, char *msg, ...)
 	return (ret);
 }
 
-
 void	ft_print_message(char *shell, char *text, char *msg)
 {
 	if (shell != NULL)
 	{
 		ft_putstr_fd(shell, 2);
-        if (text && *text)
+		if (text && *text)
 		{
 			ft_putstr_fd(": ", 2);
 			if (msg)
 				ft_putstr_fd(text, 2);
 		}
 		if (msg && *msg)
-			ft_putstr_fd(": ", 2); 
+			ft_putstr_fd(": ", 2);
 	}
 }
-

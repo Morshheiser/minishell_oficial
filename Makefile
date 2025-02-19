@@ -20,42 +20,37 @@ SRCS	=	./src/builtins/ft_cd.c\
 			./src/cleanup/cleanup_env.c\
 			./src/cleanup/cleanup_fd.c\
 			./src/cleanup/cleanup_shell.c\
-			./src/utils/ft_allocutils.c\
-			./src/utils/ft_cmdutils.c\
-			./src/utils/ft_fdutils.c\
-			./src/utils/ft_getenvp.c\
-			./src/utils/ft_pidutils.c\
-			./src/utils/ft_shellutils.c\
-			./src/utils/ft_strutils.c\
-			./src/env/ft_arr_cpy.c\
-			./src/env/ft_arr_free.c\
-			./src/env/ft_arr_size.c\
-			./src/env/ft_arr_srch.c\
-			./src/env/ft_atolli.c\
+			./src/utils/ft_alloc_utils.c\
+			./src/utils/ft_cmd_utils.c\
+			./src/utils/ft_env_utils.c\
+			./src/utils/ft_pid_utils.c\
+			./src/utils/ft_free_utils.c\
+			./src/env/ft_utils_env_1.c\
+			./src/env/ft_utils_env.c\
 			./src/env/ft_find_env.c\
 			./src/env/ft_init_env.c\
 			./src/executor/ft_executer.c\
-			./src/executor/ft_executorutils.c\
-			./src/executor/ft_getpathname.c\
+			./src/executor/ft_executor_utils_1.c\
+			./src/executor/ft_executor_utils.c\
+			./src/executor/ft_get_path_name.c\
 			./src/expansion/ft_expansion.c\
-			./src/expansion/ft_expnd_dquote.c\
-			./src/expansion/ft_expnd_env.c\
-			./src/expansion/ft_expnd_squote.c\
-			./src/expansion/ft_expnd_txt.c\
-			./src/expansion/ft_isolate.c\
-			./src/expansion/ft_unify.c\
+			./src/expansion/ft_expan_two_quote.c\
+			./src/expansion/ft_expan_env.c\
+			./src/expansion/ft_expan_one_quote.c\
+			./src/expansion/ft_expan_txt.c\
+			./src/expansion/ft_merge.c\
 			./src/lexer/ft_lexer.c\
 			./src/main/main.c\
 			./src/main/ft_check_space.c\
 			./src/main/ft_error_utils.c\
 			./src/main/ft_set_prompt.c\
-			./src/main/ft_start_shel.c\
+			./src/main/ft_start_shell.c\
 			./src/parser/ft_parser.c\
 			./src/parser/ft_heredoc.c\
-			./src/parser/ft_mountarg.c\
+			./src/parser/ft_process_cmd.c\
 			./src/parser/ft_prompt_split.c\
-			./src/parser/ft_setredir.c\
-			./src/parser/ft_skipquote.c\
+			./src/parser/ft_config_redir.c\
+			./src/parser/ft_find_quote.c\
 			./src/signals/ft_signal_handler.c\
 			./src/signals/ft_signal.c\
 		

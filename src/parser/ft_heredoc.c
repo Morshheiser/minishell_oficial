@@ -1,7 +1,5 @@
 #include "../../include/minishell.h"
 
-//ok
-
 int	ft_heredoc(char *end_of_file)
 {
 	int	fd[2];
@@ -16,17 +14,15 @@ int	ft_heredoc(char *end_of_file)
 	return (fd[IN]);
 }
 
-
 static int	ft_return_heredoc(int fd[2])
 {
-    close (fd[OUT]);
-    return (fd[IN]);
+	close(fd[OUT]);
+	return (fd[IN]);
 }
 
- //ok
 static int	ft_read_heredoc(int fd, char *end_of_file)
 {
-	char	*line;
+	char *line;
 	size_t eof_len;
 
 	eof_len = ft_strlen(end_of_file);
@@ -35,7 +31,8 @@ static int	ft_read_heredoc(int fd, char *end_of_file)
 		line = readline("> ");
 		if (!line)
 		{
-			ft_perror(0,"ft_read_heredoc: End of input (EOF) reached\n", end_of_file);
+			ft_perror(0, "ft_read_heredoc: End of input (EOF) reached\n",
+				end_of_file);
 			return (1);
 		}
 		if (!ft_strncmp(end_of_file, line, eof_len))

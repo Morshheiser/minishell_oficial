@@ -2,8 +2,8 @@
 //rever
 int	ft_env(t_env *env)
 {
-	t_env *current;
-	int i;
+	t_env	*current;
+	int		i;
 
 	if (!env || !env->var_list)
 	{

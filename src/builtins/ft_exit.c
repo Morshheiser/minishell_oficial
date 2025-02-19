@@ -1,7 +1,8 @@
 #include "../../include/minishell.h"
+
 void	ft_end(t_env *env, t_shell *shell)
 {
-	if(!env || !shell)
+	if (!env || !shell)
 		return ;
 	ft_clean_sh(shell);
 	ft_free_arr(env->var_list);
@@ -9,49 +10,49 @@ void	ft_end(t_env *env, t_shell *shell)
 	free(env);
 }
 
-int ft_compare_with_limit(char *arg, int i, int len, int sign)
+int	ft_compare_with_limit(char *arg, int i, int len, int sign)
 {
-    char *limit;
-    int j;
+	char	*limit;
+	int		j;
 
-    if (sign == 1)
+	if (sign == 1)
 		limit = "9223372036854775807";
-    else
+	else
 		limit = "9223372036854775808";
-    j = 0;
-    while (j < len)
-    {
-        if (arg[i + j] > limit[j])
-            return 1;
-        if (arg[i + j] < limit[j])
-            return 0;
+	j = 0;
+	while (j < len)
+	{
+		if (arg[i + j] > limit[j])
+			return (1);
+		if (arg[i + j] < limit[j])
+			return (0);
 		j++;
-    }
-    return 0;
+	}
+	return (0);
 }
-//rever 
-int ft_is_overflow(char *arg)
+// rever
+int	ft_is_overflow(char *arg)
 {
-    int sign;
-    int i;
-    int len;
+	int	sign;
+	int	i;
+	int	len;
 
-    i = 0;
-    sign = 1;
-    if (arg[i] == '-' || arg[i] == '+')
-    {
-        if (arg[i] == '-')
-            sign = -1;
-        i++;
-    }
-    while (arg[i] == '0')
-        i++;
-    if (arg[i] == '\0')
-        return 0;
-    len = ft_strlen(arg + i);
-    if (len > 19)
-        return 1;
-    return (ft_compare_with_limit(arg, i, len, sign));
+	i = 0;
+	sign = 1;
+	if (arg[i] == '-' || arg[i] == '+')
+	{
+		if (arg[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (arg[i] == '0')
+		i++;
+	if (arg[i] == '\0')
+		return (0);
+	len = ft_strlen(arg + i);
+	if (len > 19)
+		return (1);
+	return (ft_compare_with_limit(arg, i, len, sign));
 }
 
 int	ft_is_all_digit(char *str)
@@ -67,7 +68,7 @@ int	ft_is_all_digit(char *str)
 			i++;
 		else
 			return (1);
-    }
+	}
 	return (0);
 }
 
@@ -75,9 +76,7 @@ void	ft_exit(char **args, t_env *env, t_shell *shell)
 {
 	unsigned char	ret;
 
-//!! Por que esse status_g se está apagando as funções de variável global?
 	status_g = 0;
-//------------------------------------------------------------------------
 	printf("exit\n");
 	if (ft_size(args) == 2)
 	{

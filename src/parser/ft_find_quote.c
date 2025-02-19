@@ -1,9 +1,9 @@
 #include "../../include/minishell.h"
-//ok
+
 int	ft_find_quote_end(char *str)
 {
-	int		i;
-	char	quote_char;
+	int i;
+	char quote_char;
 
 	if (!str)
 		return (0);
@@ -11,7 +11,7 @@ int	ft_find_quote_end(char *str)
 	quote_char = str[i];
 	if (str[i] == '\'' || str[i] == '\"')
 	{
-        i++;
+		i++;
 		while (str[i] && str[i] != quote_char)
 			i++;
 		if (str[i] == quote_char)

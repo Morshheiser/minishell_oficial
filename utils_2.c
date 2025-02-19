@@ -1,5 +1,5 @@
 #include "../../include/minishell.h"
-//nao achei
+/*nao achei
 void process_command_pipeline(int orig_pipe, t_shell *shell, t_cmd *cmd)
 {
     t_pid *list;
@@ -35,7 +35,7 @@ t_cmd *ft_create_command_from_input(char *input, t_shell *shell)
     }
     return (cmd);
 }
-
+/*
 //nao achei
 t_cmd	*ft_new_cmd(t_fd *in, t_fd *out, char **args)
 {
@@ -87,4 +87,4 @@ int ft_count_pipe(char *str)
     }
     return (count);
 }
-
+*/
