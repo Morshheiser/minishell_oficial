@@ -1,0 +1,6 @@
+[DEBUG] Iniciando ft_echo. args[0]: echo
+[DEBUG] Argumento não é '-n', ajustando new_line para 1
+[DEBUG] Imprimindo argumentos:
+[DEBUG] Imprimindo argumento args[1]: Olá, Pipe!
+Olá, Pipe![DEBUG] Imprimindo nova linha no final
+

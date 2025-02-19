@@ -1,0 +1,4 @@
+[DEBUG] Imprimindo argumento args[1]: Texto de exemplo
+Texto de exemplo[DEBUG] Imprimindo nova linha no final
+[DEBUG] Imprimindo argumento args[1]: Texto adicional
+Texto adicional[DEBUG] Imprimindo nova linha no final
